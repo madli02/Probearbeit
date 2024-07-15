@@ -1,0 +1,108 @@
+<div class="dashboard">
+  <header>
+    <app-navbar></app-navbar>
+  </header>
+
+  <main>
+    <div class="dashboard-main-container">
+
+      <div class="dashboard-main-person-info">
+        <div class="dashboard-main-person">
+
+          <div class="dashboard-image">
+            <img src="/img/icon_web_user.png">
+          </div>
+          <div class="dashboard-text">
+            <h1>Person</h1>
+          </div>
+
+          <table>
+            <tr>
+              <td class="label">Firstname</td>
+              <td>{{ person.firstName }}</td>
+            </tr>
+            <tr>
+              <td class="label">Lastname</td>
+              <td>{{ person.lastName }}</td>
+            </tr>
+            <tr>
+              <td class="label">Additional Information</td>
+              <td>{{ person.additionalInformation }}</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="dashboard-main-info">
+
+          <div class="dashboard-image">
+            <img src="/img/icon_web_info.png">
+          </div>
+          <div class="dashboard-text">
+            <h1>CADS Information</h1>
+          </div>
+
+          <table>
+            <tr>
+              <td class="label">Name</td>
+              <td>{{ info.name }}</td>
+            </tr>
+            <tr>
+              <td class="label">Address</td>
+              <td>{{ adresse.street }} {{ adresse.number }}, {{ adresse.plz }} {{ adresse.city }}</td>
+            </tr>
+            <tr>
+              <td class="label">Email</td>
+              <td>{{ info.email }}</td>
+            </tr>
+            <tr>
+              <td class="label">Phone Number</td>
+              <td>{{ info.phone }}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="dashboard-main-table-products">
+
+        <div class="dashboard-image">
+          <img src="/img/icon_web_liste.png">
+        </div>
+        <div class="dashboard-text">
+          <h1>Probearbeit - Liste</h1>
+        </div>
+
+        <div class="dashboard-table">
+          <table>
+            <thead>
+            <tr>
+              <th>PRODUCT</th>
+              <th>MATERIAL NUMBER</th>
+              <th>GTIN NUMBER</th>
+              <th>BATCH NUMBER</th>
+              <th>STOCK</th>
+              <th>EXPIRATION DATE</th>
+            </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of product">
+                <td>{{ item.name }}</td>
+                <td>{{ item.materialNumber }}</td>
+                <td>{{ item.gtinNumber }}</td>
+                <td>{{ item.batchNumber }}</td>
+                <td>{{ item.stock }}</td>
+                <td>{{ item.expirationDate }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+
+  </footer>
+
+</div>
+
